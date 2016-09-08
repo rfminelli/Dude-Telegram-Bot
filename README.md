@@ -1,5 +1,8 @@
 # Mikrotik The Dude Telegram Notification Bot
 
+This is writted to work with dude 6.x which run on Mikrotik routers
+
+
 1) Customize notifications in The Dude
   * On the left panel of The Dude go down to "Notifications" and open it.
   * edit the "log to syslog" notification
