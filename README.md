@@ -1,6 +1,7 @@
 # Mikrotik The Dude Telegram Notification Bot
 
-This is writted to work with dude 6.x which run on Mikrotik routers
+This is written to work with dude 6.x which run on Mikrotik routers
+
 
 
 1) Customize notifications in The Dude
