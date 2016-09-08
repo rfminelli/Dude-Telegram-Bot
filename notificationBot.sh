@@ -32,10 +32,10 @@ tail -Fn0 /var/log/dude.log | while read notifications; do
 	statusMsg=$(echo "${notification}" | grep -o '`\(.*\)`' | tr -d '`()');
 
 	# Add to sqlite database
-	[ -n "${client}" ] && sqlite3 /path/dude/notifications.db "INSERT into dudeNotifications (client,deviceName,ipAddr,status,statusMsg) values (\"${client}\",\"${deviceName}\",\"${ipAddr}\",\"${status}\",\"${statusMsg}\");";
+	#[ -n "${client}" ] && sqlite3 /path/dude/notifications.db "INSERT into dudeNotifications (client,deviceName,ipAddr,status,statusMsg) values (\"${client}\",\"${deviceName}\",\"${ipAddr}\",\"${status}\",\"${statusMsg}\");";
 
 	# Group 1
-	if [ "`echo "${client}" | grep -c 'Group1'`" -ne "0" ]; then
+	if [ "`echo "${client}" | grep -c 'Group1 Notifications'`" -ne "0" ]; then
 		curl -s --max-time ${TIME} -d "chat_id=${CHATID_grp1}&disable_web_page_preview=1&parse_mode=markdown&text=${emoji}${notification}" $URL >/dev/null
 	fi;
 
@@ -44,12 +44,12 @@ tail -Fn0 /var/log/dude.log | while read notifications; do
 	if [ "`echo ${notification} | grep -c 'is now _down_'`" -ne "0" ]; then
 
 		# Group 2
-		if [ "`echo "${client}" | grep -c 'Group 2'`" -ne "0" ]; then
+		if [ "`echo "${client}" | grep -c 'Group 2 Notifications'`" -ne "0" ]; then
 			curl -s --max-time ${TIME} -d "chat_id=${CHATID_grp2}&disable_web_page_preview=1&parse_mode=markdown&text=${emoji}${notification}" $URL >/dev/null
 		fi;
 
 		# Group 3
-		if [ "`echo "${client}" | grep -c 'Group 3'`" -ne "0" ]; then
+		if [ "`echo "${client}" | grep -c 'Group 3 Notifications'`" -ne "0" ]; then
 			curl -s --max-time ${TIME} -d "chat_id=${CHATID_grp3}&disable_web_page_preview=1&parse_mode=markdown&text=${emoji}${notification}" $URL >/dev/null
 		fi;
 	fi;
