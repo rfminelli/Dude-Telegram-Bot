@@ -2,6 +2,9 @@
 
 **This is written to work with dude 6.x which run on Mikrotik routers**
 
+_To see a list of emoji's go to http://apps.timwhitlock.info/emoji/tables/unicode_
+
+---
 
 1) Customize notifications in The Dude
   * On the left panel of The Dude go down to "Notifications" and open it.
