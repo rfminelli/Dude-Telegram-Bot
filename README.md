@@ -9,8 +9,8 @@
   * modify the "Text" to: ```Service [Probe.Name] at *[Device.NetMaps]* on [Device.Name] [Device.FirstAddress] is now _[Service.Status]_ `([Service.ProblemDescription])````
 
 2) On the mikrotik hosting the dude you need to send the dude logs to a linux log server
-  * /system logging action set 3 remote=192.168.0.1
-  * /system logging add action=remote topics=dude
+  * ```/system logging action set 3 remote=192.168.0.1```
+  * ```/system logging add action=remote topics=dude```
 
 3) On the linux server edit ```/etc/rsyslog.conf```
   * at the bottom add the following
